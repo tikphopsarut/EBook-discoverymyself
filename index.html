@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>สูตรโกงค้นหาตัวตนด้วย AI — ถ้าคุณยังไม่รู้ว่าคุณเก่งอะไร เล่มนี้คือจุดเริ่มต้น</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-accent">สูตรโกง</span> ค้นหาตัวตน
+      </div>
+      <div class="nav-actions">
+        <a href="ตัวอย่าง EBook สูตรโกงค้นหาตัวตน .pdf" target="_blank" class="nav-preview">ดูตัวอย่างฟรี</a>
+        <button onclick="openModal()" class="nav-cta">ซื้อเลย 490 ฿</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-particles" id="particles"></div>
+    <div class="hero-glow"></div>
+    <div class="container hero-content">
+      <div class="hero-left">
+        <div class="hero-badge reveal">🤖 ยุคใหม่ของการค้นหาตัวตน ด้วย AI</div>
+        <h1 class="hero-title reveal">
+          ยังไม่รู้ว่าตัวเอง<span class="text-cyan">เก่งอะไร?</span><br />
+          ให้ AI <span class="text-glow">ช่วยคุณหาคำตอบ</span>
+        </h1>
+        <p class="hero-subtitle reveal">
+          Ebook ที่ช่วยให้คุณสำรวจตัวเองอย่างเป็นระบบ ผ่านคำถามและ Prompt ที่ออกแบบมาเพื่อให้คุณเห็นจุดแข็ง ความถนัด และทิศทางที่เหมาะกับตัวเองมากขึ้น
+        </p>
+        <ul class="hero-bullets reveal">
+          <li><span class="bullet-dot"></span>รู้ว่าคุณเก่งอะไรจริง — ไม่ใช่แค่เดาเอา</li>
+          <li><span class="bullet-dot"></span>เห็นทิศทางที่ควรไปต่อ อย่างมีเหตุผล</li>
+          <li><span class="bullet-dot"></span>ใช้กับ ChatGPT ได้ทันที ไม่ต้องติดตั้งอะไรเพิ่ม</li>
+        </ul>
+        <div class="hero-actions reveal">
+          <button onclick="openModal()" class="btn-primary btn-hero-primary">
+            <span>เริ่มค้นหาตัวเองวันนี้ — 490 บาท</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <a href="ตัวอย่าง EBook สูตรโกงค้นหาตัวตน .pdf" target="_blank" class="btn-ghost btn-hero-ghost">
+            อ่านตัวอย่างฟรี 8 หน้า
+          </a>
+        </div>
+        <p class="hero-micro-trust reveal">เปิดดูตัวอย่างฟรีก่อนตัดสินใจ &nbsp;•&nbsp; ไม่ต้องลงทะเบียน</p>
+        <div class="hero-stats reveal">
+          <div class="stat-item">
+            <span class="stat-num">100</span><span class="stat-suffix">+</span>
+            <span class="stat-label">หน้า</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">6</span>
+            <span class="stat-label">Phase</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num stat-text">Prompt</span>
+            <span class="stat-label">ครบทุก Phase</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">490</span><span class="stat-suffix">฿</span>
+            <span class="stat-label">เท่านั้น</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-book reveal">
+        <div class="book-wrapper">
+          <div class="book-cover">
+            <img src="รูป/EBook สูตรโกงค้นหาตัวตน.png" alt="ปก Ebook สูตรโกงค้นหาตัวตนด้วย AI" />
+          </div>
+          <div class="book-glow-ring"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PAIN POINTS ===== -->
+  <section class="pain-section" id="pain">
+    <div class="container">
+      <div class="section-label reveal">คุณเป็นแบบนี้ไหม?</div>
+      <h2 class="section-title reveal">รู้สึกแบบนี้บ้างไหมครับ...</h2>
+      <div class="pain-grid">
+        <div class="pain-card reveal">
+          <div class="pain-icon">😮‍💨</div>
+          <p>ทำงานทุกวัน มีเงินเดือนเข้า<br /><strong>แต่รู้สึกว่ามัน "ยังไม่ใช่"</strong></p>
+        </div>
+        <div class="pain-card reveal">
+          <div class="pain-icon">🌀</div>
+          <p>ลองทำหลายอย่างแล้ว ขายของ ทำเพจ ทำคลิป<br /><strong>แต่ก็ยังรู้สึกว่า "มันไม่ work"</strong></p>
+        </div>
+        <div class="pain-card reveal">
+          <div class="pain-icon">🤔</div>
+          <p>อายุ 30 กว่าแล้ว ยังตอบไม่ได้ว่า<br /><strong>ตัวเองชอบอะไรจริงๆ</strong></p>
+        </div>
+        <div class="pain-card reveal">
+          <div class="pain-icon">🗺️</div>
+          <p>มีเวลาว่าง แต่นั่งจ้องหน้าจออยู่เฉยๆ<br /><strong>ไม่รู้จะทำอะไรต่อ</strong></p>
+        </div>
+        <div class="pain-card reveal">
+          <div class="pain-icon">💸</div>
+          <p>อยากไปเรียน Coach อยากจ้างโค้ช<br /><strong>แต่แพงเกินไป ไม่คุ้มที่จะลอง</strong></p>
+        </div>
+        <div class="pain-card reveal">
+          <div class="pain-icon">😶</div>
+          <p>มีคนถามว่า "แกชอบทำอะไรจริงๆ?"<br /><strong>แล้วตอบไม่ออก</strong></p>
+        </div>
+      </div>
+      <div class="pain-conclusion reveal">
+        <p>ถ้าใช่ — มันไม่ใช่ความผิดของคุณครับ<br />
+        เพราะตั้งแต่เด็ก <strong>ไม่มีใครสอนให้เรา "รู้จักตัวเอง"</strong> อย่างจริงจัง</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHO IS THIS FOR ===== -->
+  <section class="who-for-section" id="who">
+    <div class="container">
+      <div class="section-label reveal">เล่มนี้เหมาะกับใคร?</div>
+      <h2 class="section-title reveal">เล่มนี้เหมาะกับคุณ ถ้า...</h2>
+      <div class="who-for-grid">
+        <div class="who-for-card reveal">
+          <div class="who-check">✓</div>
+          <p>คุณรู้สึกว่าใช้ชีวิตไปวัน ๆ แต่ยังไม่แน่ใจว่า<br /><strong>ตัวเองเหมาะกับอะไร</strong></p>
+        </div>
+        <div class="who-for-card reveal">
+          <div class="who-check">✓</div>
+          <p>คุณเคยถามตัวเองว่า <strong>"เราชอบอะไรกันแน่"</strong><br />แต่ตอบไม่ได้</p>
+        </div>
+        <div class="who-for-card reveal">
+          <div class="who-check">✓</div>
+          <p>คุณอยากใช้ AI เพื่อเข้าใจตัวเอง<br /><strong>ไม่ใช่แค่ใช้ทำงาน</strong></p>
+        </div>
+        <div class="who-for-card reveal">
+          <div class="who-check">✓</div>
+          <p>คุณเคยลองหลายอย่างแล้วมันไม่ work<br /><strong>และสงสัยว่าทำไม</strong></p>
+        </div>
+        <div class="who-for-card reveal">
+          <div class="who-check">✓</div>
+          <p>คุณอยากค้นหาตัวเองแบบจริงจัง<br /><strong>แต่ไม่รู้จะเริ่มตรงไหน</strong></p>
+        </div>
+        <div class="who-for-card reveal">
+          <div class="who-check">✓</div>
+          <p>คุณเป็น <strong>มือใหม่ด้าน AI โดยสมบูรณ์</strong><br />ก็ใช้เล่มนี้ได้เลย ไม่ต้องมีพื้นฐาน</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PREVIEW SECTION ===== -->
+  <section class="preview-section" id="preview">
+    <div class="container">
+      <div class="section-label reveal">ก่อนซื้อ ดูก่อนได้เลย</div>
+      <h2 class="section-title reveal">ลองเปิดดูข้างในก่อน</h2>
+      <p class="section-desc reveal">
+        เราไม่อยากให้คุณซื้อโดยไม่รู้ว่าข้างในมีอะไร<br />
+        เปิดดูเนื้อหาจริงได้ฟรี ก่อนตัดสินใจ
+      </p>
+      <div class="preview-what reveal">
+        <div class="preview-what-title">📂 ในตัวอย่างฟรี คุณจะได้เห็น:</div>
+        <div class="preview-what-grid">
+          <div class="preview-what-item">
+            <span class="pwi-icon">📖</span>
+            <div>
+              <strong>บทนำ</strong>
+              <span>จุดเริ่มต้นสำหรับคนที่ยังไม่รู้จะเริ่มตรงไหน</span>
+            </div>
+          </div>
+          <div class="preview-what-item">
+            <span class="pwi-icon">🧠</span>
+            <div>
+              <strong>วิธีใช้ Prompt ในเล่ม</strong>
+              <span>เห็นก่อนว่า Prompt ทำงานยังไง ก่อนอ่านทั้งเล่ม</span>
+            </div>
+          </div>
+          <div class="preview-what-item">
+            <span class="pwi-icon">⚡</span>
+            <div>
+              <strong>Mini Practice</strong>
+              <span>ลองสำรวจตัวเองได้ทันทีในตัวอย่างนี้เลย</span>
+            </div>
+          </div>
+          <div class="preview-what-item">
+            <span class="pwi-icon">🗺️</span>
+            <div>
+              <strong>เนื้อหาจาก Phase จริง</strong>
+              <span>เห็น depth ของเล่มก่อนว่ามันลึกแค่ไหน</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="preview-pages reveal">
+        <div class="page-mock page-mock-img">
+          <div class="page-mock-header">หน้า 2 — สารบัญ</div>
+          <div class="page-mock-img-wrap">
+            <img src="รูป/2.png" alt="สารบัญ — สูตรโกงค้นหาตัวตนด้วย AI" loading="lazy" />
+            <div class="page-mock-fade"></div>
+          </div>
+        </div>
+        <div class="page-mock page-mock-img">
+          <div class="page-mock-header">หน้า 14 — วิธีใช้ Prompt</div>
+          <div class="page-mock-img-wrap">
+            <img src="รูป/14.png" alt="วิธีใช้ Prompt — สูตรโกงค้นหาตัวตนด้วย AI" loading="lazy" />
+            <div class="page-mock-fade"></div>
+          </div>
+        </div>
+        <div class="page-mock page-mock-img">
+          <div class="page-mock-header">Phase 1 — Mini Practice จริงในเล่ม</div>
+          <div class="page-mock-img-wrap">
+            <img src="รูป/แต่ละ phase/5.16 Phase 1 Mini Practice.png" alt="Mini Practice Phase 1 — สูตรโกงค้นหาตัวตนด้วย AI" loading="lazy" />
+            <div class="page-mock-fade"></div>
+          </div>
+        </div>
+      </div>
+      <div class="preview-cta reveal">
+        <a href="ตัวอย่าง EBook สูตรโกงค้นหาตัวตน .pdf" target="_blank" class="btn-primary btn-large">
+          <span>📄 เปิดดูตัวอย่างฟรีเลย</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
+        <p class="preview-cta-note">อ่านตัวอย่างแล้วรู้สึกว่าใช่ — เล่มเต็มราคา 490 บาท</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AUTHOR STORY ===== -->
+  <section class="story-section" id="story">
+    <div class="container">
+      <div class="story-card reveal">
+        <div class="story-quote-mark">"</div>
+        <div class="story-content">
+          <div class="section-label">เรื่องราวของผู้เขียน</div>
+          <h2>ผมก็เคยเป็นแบบนั้นครับ</h2>
+          <p>ผมมีงานที่มั่นคง เงินเดือนเข้าทุกเดือน — แต่ถ้าถามตรงๆ ว่าข้างในรู้สึกยังไง คำตอบตอนนั้นคือ <strong>"อยากรวย แต่ไม่รู้จะเอายังไง"</strong></p>
+          <p>ผมลองทำโน่นทำนี่ — ทำแบรนด์เสื้อ หาผ้า จ้างช่างตัด ก็เจ๊ง ลองดรอปชิป ขายของออนไลน์ บางอย่างก็ทำเงินได้บ้าง <strong>แต่ความรู้สึกมันแปลก ได้ตังค์แล้วก็เฉยๆ</strong></p>
+          <p>จนวันหนึ่งผมลองถาม AI ครับ — ให้มันถามผมทีละคำถาม เหมือนนั่งคุยกับเพื่อนที่รู้จักเราดีและถามลึกๆ โดยไม่ตัดสิน</p>
+          <p>มันขุดลงไปถึงสิ่งที่หล่อหลอมให้เราเป็นเราในวันนี้ครับ บางทีมันทำให้ผมแปลกใจมาก ว่า<strong>ตัวเองคิดแบบนั้นอยู่โดยไม่รู้ตัว</strong></p>
+          <p class="story-highlight">
+            นั่นแหละคือที่มาของหนังสือเล่มนี้ครับ<br />
+            ผมอยากแบ่งปันวิธีนี้ให้คนที่กำลังหลงทางอยู่ได้ลองใช้บ้าง<br />
+            <strong>ไม่ต้องวนลองผิดลองถูกนานเท่าผม</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SOLUTION ===== -->
+  <section class="solution-section" id="solution">
+    <div class="container">
+      <div class="section-label reveal">ทางออก</div>
+      <h2 class="section-title reveal">AI ไม่ใช่แค่เครื่องมือหาข้อมูล<br /><span class="text-cyan">มันคือโค้ชส่วนตัวของคุณ</span></h2>
+      <p class="section-desc reveal">ในอดีต ถ้าอยากค้นหาตัวตนจริงๆ ต้องอ่านหนังสือพัฒนาตนเองเป็นสิบเล่ม เข้าคอร์ส เสียเงินหาโค้ช และลองผิดลองถูกเองเป็นปีๆ</p>
+      <div class="solution-grid reveal">
+        <div class="solution-card">
+          <div class="solution-icon">🕐</div>
+          <h3>พร้อมคุย 24 ชั่วโมง</h3>
+          <p>AI ไม่มีวันหยุด ไม่ง่วงนอน ไม่เหนื่อย พร้อมรับฟังและถามคำถามคุณได้ทุกเวลา</p>
+        </div>
+        <div class="solution-card">
+          <div class="solution-icon">🎯</div>
+          <h3>ฟังโดยไม่ตัดสิน</h3>
+          <p>ไม่กดดัน ไม่แนะนำตามที่สังคมคาดหวัง แต่ตั้งคำถามที่ทำให้คุณได้ยินเสียงของตัวเองชัดขึ้น</p>
+        </div>
+        <div class="solution-card">
+          <div class="solution-icon">🧠</div>
+          <h3>Prompt ที่ออกแบบมาเฉพาะ</h3>
+          <p>ไม่ใช่การถาม AI แบบทั่วไป แต่เป็น Prompt ที่คิดมาแล้วว่าจะดึงข้อมูลลึกๆ จากตัวคุณออกมาได้ดีที่สุด</p>
+        </div>
+        <div class="solution-card">
+          <div class="solution-icon">💡</div>
+          <h3>จากประสบการณ์จริง</h3>
+          <p>ไม่ใช่ทฤษฎีในห้องเรียน แต่มาจาก Prompt ที่ผู้เขียนใช้ได้ผลกับตัวเองจริงๆ</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW TO USE ===== -->
+  <section class="howto-section" id="howto">
+    <div class="container">
+      <div class="section-label reveal">ซื้อแล้วเริ่มยังไง?</div>
+      <h2 class="section-title reveal">ใช้งานง่าย — <span class="text-cyan">5 ขั้นตอน</span></h2>
+      <p class="section-desc reveal">ไม่ต้องมีพื้นฐาน AI มาก่อน ทำตามนี้ได้เลย</p>
+      <div class="steps-grid reveal">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h3>เปิด AI ที่คุณใช้อยู่</h3>
+            <p>ChatGPT, Claude หรือ Gemini เวอร์ชันฟรีก็ได้ครับ</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h3>Copy Prompt จากหนังสือ</h3>
+            <p>แต่ละ Phase มี Prompt พร้อมใช้เลย ไม่ต้องคิดเอง</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h3>วางลงในช่อง Chat</h3>
+            <p>วาง Prompt แล้วกด Enter ให้ AI เริ่มถามคุณ</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <h3>ตอบตามความจริง</h3>
+            <p>ไม่มีคำตอบผิดถูก ยิ่งตอบตรง ยิ่งได้ผลดี</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">5</div>
+          <div class="step-body">
+            <h3>ค่อยๆ เห็นตัวเองชัดขึ้น</h3>
+            <p>ทำซ้ำจนได้คำตอบที่รู้สึกว่า "ใช่" ค้นพบตัวเองในแบบที่ไม่เคยเจอมาก่อน</p>
+          </div>
+        </div>
+      </div>
+      <div class="howto-ai-compat reveal">
+        <p class="compat-label">ใช้ได้กับ AI ทุกตัวที่คุณมีอยู่แล้ว</p>
+        <div class="compat-badges">
+          <span class="compat-badge">ChatGPT</span>
+          <span class="compat-badge">Claude</span>
+          <span class="compat-badge">Gemini</span>
+          <span class="compat-badge">และ AI อื่นๆ</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 6 PHASES ===== -->
+  <section class="phases-section" id="phases">
+    <div class="container">
+      <div class="section-label reveal">เนื้อหาในเล่ม</div>
+      <h2 class="section-title reveal">เดินทาง 6 Phase<br /><span class="text-cyan">จากหลงทาง → รู้จักตัวเอง → วางแผนชีวิต</span></h2>
+      <div class="phases-timeline">
+        <div class="phase-item reveal">
+          <div class="phase-num">0</div>
+          <div class="phase-body">
+            <div class="phase-tag">เตรียมพร้อม</div>
+            <h3>Phase 0 — เตรียมเครื่องมือก่อนออกเดินทาง</h3>
+            <p>ตั้งค่า AI ให้เป็นโค้ชของคุณ เข้าใจวิธีใช้ Prompt อย่างถูกต้อง และเตรียมจิตใจให้พร้อมสำรวจตัวเอง</p>
+          </div>
+        </div>
+        <div class="phase-item reveal">
+          <div class="phase-num">1</div>
+          <div class="phase-body phase-body--has-img">
+            <img class="phase-thumb" src="รูป/แต่ละ phase/5.13 Phase 1 Divider.png" alt="Phase 1 The Archaeologist" loading="lazy" />
+            <div class="phase-body-text">
+              <div class="phase-tag">The Archaeologist</div>
+              <h3>Phase 1 — ปลดล็อกตัวตนในอดีต</h3>
+              <p>ขุดค้นความทรงจำ ความเชื่อ และรูปแบบพฤติกรรมที่ถูกฝังไว้ตั้งแต่เด็ก ค้นหาว่าอะไรที่หล่อหลอมให้คุณเป็นคุณในวันนี้</p>
+            </div>
+          </div>
+        </div>
+        <div class="phase-item reveal">
+          <div class="phase-num">2</div>
+          <div class="phase-body phase-body--has-img">
+            <img class="phase-thumb" src="รูป/แต่ละ phase/5.18 Phase 2 Divider.png" alt="Phase 2 The Cartographer" loading="lazy" />
+            <div class="phase-body-text">
+              <div class="phase-tag">The Cartographer</div>
+              <h3>Phase 2 — ทำความเข้าใจตัวตนในปัจจุบัน</h3>
+              <p>วาดแผนที่ตัวตนของคุณตอนนี้ ค้นพบจุดแข็ง ความสนใจที่แท้จริง และสิ่งที่ทำให้คุณรู้สึก Alive</p>
+            </div>
+          </div>
+        </div>
+        <div class="phase-item reveal">
+          <div class="phase-num">3</div>
+          <div class="phase-body phase-body--has-img">
+            <img class="phase-thumb" src="รูป/แต่ละ phase/5.25 Phase 3 Divider.png" alt="Phase 3 The Explorer" loading="lazy" />
+            <div class="phase-body-text">
+              <div class="phase-tag">The Explorer</div>
+              <h3>Phase 3 — สำรวจความเป็นไปได้ในอนาคต</h3>
+              <p>เปิดประตูไปสู่ความเป็นไปได้ที่คุณยังไม่เคยมองเห็น สำรวจเส้นทางชีวิตที่เข้ากับตัวตนของคุณจริงๆ</p>
+            </div>
+          </div>
+        </div>
+        <div class="phase-item reveal">
+          <div class="phase-num">4</div>
+          <div class="phase-body phase-body--has-img">
+            <img class="phase-thumb" src="รูป/แต่ละ phase/5.30 Phase 4 Divider.png" alt="Phase 4 The Architect" loading="lazy" />
+            <div class="phase-body-text">
+              <div class="phase-tag">The Architect</div>
+              <h3>Phase 4 — ประกอบสร้างแผนที่ชีวิต</h3>
+              <p>นำทุกอย่างที่ค้นพบมาประกอบกันเป็นแผนที่ชีวิตที่ชัดเจน พร้อมขั้นตอนที่ทำได้จริง</p>
+            </div>
+          </div>
+        </div>
+        <div class="phase-item reveal">
+          <div class="phase-num">5</div>
+          <div class="phase-body phase-body--has-img">
+            <img class="phase-thumb" src="รูป/แต่ละ phase/5.36 Phase 5 Divider.png" alt="Phase 5 The Gardener" loading="lazy" />
+            <div class="phase-body-text">
+              <div class="phase-tag">The Gardener</div>
+              <h3>Phase 5 — โค้ชตัวเองได้ตลอดชีวิต</h3>
+              <p>ไม่ใช่แค่อ่านแล้วจบ แต่คุณจะมีเครื่องมือโค้ชตัวเองต่อเนื่องได้ตลอด ให้ตัวเองเติบโตอย่างที่ต้องการ</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PHASE GALLERY ===== -->
+  <section class="phase-gallery-section" id="gallery">
+    <div class="container">
+      <div class="section-label reveal">ทุก Phase มีโลกของตัวเอง</div>
+      <h2 class="section-title reveal">แต่ละ Phase ออกแบบมาเฉพาะ<br /><span class="text-cyan">ไม่ใช่แค่หน้ากระดาษธรรมดา</span></h2>
+      <p class="section-desc reveal">ทุก Phase มี artwork เฉพาะตัว เนื้อหาลึก และ Prompt พร้อมใช้<br />เหมือนเดินทางผ่าน 5 โลกที่แตกต่างกัน</p>
+      <div class="phase-gallery-grid">
+
+        <div class="phase-gallery-card reveal" style="--delay:0ms">
+          <img src="รูป/แต่ละ phase/5.13 Phase 1 Divider.png" alt="Phase 1 The Archaeologist" loading="lazy" />
+          <div class="phase-gallery-overlay">
+            <span class="pgc-phase-num">Phase 1</span>
+            <h3>The Archaeologist</h3>
+            <p>ปลดล็อกตัวตนในอดีต</p>
+          </div>
+        </div>
+
+        <div class="phase-gallery-card reveal" style="--delay:80ms">
+          <img src="รูป/แต่ละ phase/5.18 Phase 2 Divider.png" alt="Phase 2 The Cartographer" loading="lazy" />
+          <div class="phase-gallery-overlay">
+            <span class="pgc-phase-num">Phase 2</span>
+            <h3>The Cartographer</h3>
+            <p>ทำความเข้าใจตัวตนในปัจจุบัน</p>
+          </div>
+        </div>
+
+        <div class="phase-gallery-card reveal" style="--delay:160ms">
+          <img src="รูป/แต่ละ phase/5.25 Phase 3 Divider.png" alt="Phase 3 The Explorer" loading="lazy" />
+          <div class="phase-gallery-overlay">
+            <span class="pgc-phase-num">Phase 3</span>
+            <h3>The Explorer</h3>
+            <p>สำรวจความเป็นไปได้ในอนาคต</p>
+          </div>
+        </div>
+
+        <div class="phase-gallery-card reveal" style="--delay:240ms">
+          <img src="รูป/แต่ละ phase/5.30 Phase 4 Divider.png" alt="Phase 4 The Architect" loading="lazy" />
+          <div class="phase-gallery-overlay">
+            <span class="pgc-phase-num">Phase 4</span>
+            <h3>The Architect</h3>
+            <p>ประกอบสร้างแผนที่ชีวิต</p>
+          </div>
+        </div>
+
+        <div class="phase-gallery-card reveal" style="--delay:320ms">
+          <img src="รูป/แต่ละ phase/5.36 Phase 5 Divider.png" alt="Phase 5 The Gardener" loading="lazy" />
+          <div class="phase-gallery-overlay">
+            <span class="pgc-phase-num">Phase 5</span>
+            <h3>The Gardener</h3>
+            <p>โค้ชตัวเองได้ตลอดชีวิต</p>
+          </div>
+        </div>
+
+      </div>
+      <div class="phase-gallery-cta reveal">
+        <button onclick="openModal()" class="btn-primary">
+          <span>รับ Ebook ครบทั้ง 5 Phase — 490 บาท</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VS COMPARISON ===== -->
+  <section class="compare-section" id="compare">
+    <div class="container">
+      <div class="section-label reveal">ทำไมต้องเล่มนี้?</div>
+      <h2 class="section-title reveal">เทียบกับวิธีค้นหาตัวตนแบบเดิม</h2>
+      <div class="compare-table reveal">
+        <div class="compare-header">
+          <div class="compare-col col-feature"></div>
+          <div class="compare-col col-old">วิธีเดิม</div>
+          <div class="compare-col col-new">สูตรโกง AI</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-col col-feature">ค่าใช้จ่าย</div>
+          <div class="compare-col col-old bad">คอร์ส / โค้ช ราคาสูง</div>
+          <div class="compare-col col-new good">490 บาท</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-col col-feature">เวลา</div>
+          <div class="compare-col col-old bad">เป็นปีๆ ลองผิดลองถูก</div>
+          <div class="compare-col col-new good">เริ่มเห็นผลใน 1–2 สัปดาห์</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-col col-feature">ความพร้อม</div>
+          <div class="compare-col col-old bad">ต้องนัด ต้องรอ</div>
+          <div class="compare-col col-new good">24 ชม. พร้อมเสมอ</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-col col-feature">การตัดสิน</div>
+          <div class="compare-col col-old bad">อาจรู้สึกเขิน กลัวถูกตัดสิน</div>
+          <div class="compare-col col-new good">AI ฟังโดยไม่ตัดสิน</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-col col-feature">ความเป็นส่วนตัว</div>
+          <div class="compare-col col-old bad">ต้องพูดกับคนแปลกหน้า</div>
+          <div class="compare-col col-new good">คุยกับตัวเองในที่ส่วนตัว</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-col col-feature">Prompt สำเร็จรูป</div>
+          <div class="compare-col col-old bad">ไม่มี ต้องคิดเอง</div>
+          <div class="compare-col col-new good">มีทุก Phase พร้อมใช้เลย</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHAT'S INSIDE ===== -->
+  <section class="inside-section" id="inside">
+    <div class="container">
+      <div class="section-label reveal">คุณจะได้อะไร?</div>
+      <h2 class="section-title reveal">ทุกอย่างที่อยู่ในเล่มนี้</h2>
+      <div class="inside-grid">
+        <div class="inside-item reveal">
+          <div class="check-icon">✦</div>
+          <div><strong>100+ หน้า</strong> เนื้อหาที่เขียนจากประสบการณ์จริง ไม่ใช่ทฤษฎีในตำรา</div>
+        </div>
+        <div class="inside-item reveal">
+          <div class="check-icon">✦</div>
+          <div><strong>6 Phase ที่เป็นระบบ</strong> จากอดีต → ปัจจุบัน → อนาคต → แผนชีวิต</div>
+        </div>
+        <div class="inside-item reveal">
+          <div class="check-icon">✦</div>
+          <div><strong>Prompt สำเร็จรูปทุก Phase</strong> ออกแบบมาเพื่อดึงข้อมูลลึกๆ จากตัวคุณโดยเฉพาะ</div>
+        </div>
+        <div class="inside-item reveal">
+          <div class="check-icon">✦</div>
+          <div><strong>วิธีใช้ AI เป็นโค้ช 1-on-1</strong> ที่ฟังคุณ ไม่กดดัน ตั้งคำถามที่คนรอบข้างไม่เคยถาม</div>
+        </div>
+        <div class="inside-item reveal">
+          <div class="check-icon">✦</div>
+          <div><strong>รวม Prompt ทั้งหมดในเล่ม</strong> ไว้ในส่วนเดียว ใช้งานได้ง่ายไม่ต้องค้นหา</div>
+        </div>
+        <div class="inside-item reveal">
+          <div class="check-icon">✦</div>
+          <div><strong>เครื่องมือโค้ชตัวเองตลอดชีวิต</strong> Phase 5 ให้คุณต่อยอดได้ไม่มีสิ้นสุด</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonial-section" id="testimonials">
+    <div class="container">
+      <div class="section-label reveal">เสียงจากผู้อ่าน</div>
+      <h2 class="section-title reveal">คนที่ลองใช้แล้วเป็นยังไง?</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"อ่านจบแล้วรู้สึกว่า ที่ผ่านมาไม่ใช่เราไม่เก่ง แต่เราแค่ยังไม่รู้จักตัวเองพอ Prompt ในเล่มมันถามได้ตรงจุดมากๆ บางคำถามทำให้เราหยุดคิดนานมาก"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">P</div>
+            <div>
+              <strong>พิมพ์</strong>
+              <span>พนักงานออฟฟิศ อายุ 28 ปี</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"ลองผิดลองถูกมาหลายปี จนมาเจอเล่มนี้ มันไม่ได้บอกว่าคุณควรเป็นอะไร แต่มันช่วยให้คุณได้ยินเสียงของตัวเองชัดขึ้น ราคา 490 คุ้มมากครับ"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">K</div>
+            <div>
+              <strong>กานต์</strong>
+              <span>Freelance อายุ 32 ปี</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"ไม่คิดว่าการคุยกับ AI จะทำให้รู้สึกแบบนี้ได้ มันเหมือนได้คุยกับตัวเองในเวอร์ชันที่ฉลาดกว่า Phase 1 แค่ Phase เดียวก็คุ้มแล้วค่ะ"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">N</div>
+            <div>
+              <strong>นุ่น</strong>
+              <span>นักศึกษาจบใหม่ อายุ 23 ปี</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRICING ===== -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-label reveal">ราคา</div>
+      <h2 class="section-title reveal">เริ่มต้นค้นหาตัวเองวันนี้</h2>
+      <div class="pricing-card reveal">
+        <div class="pricing-badge">🔥 ราคาพิเศษ</div>
+        <div class="pricing-book-img">
+          <img src="รูป/EBook สูตรโกงค้นหาตัวตน.png" alt="Ebook สูตรโกงค้นหาตัวตนด้วย AI" />
+        </div>
+        <h3 class="pricing-title">สูตรโกง ค้นหาตัวตน ด้วย AI</h3>
+        <div class="pricing-price">
+          <span class="price-amount">490</span>
+          <span class="price-currency">บาท</span>
+        </div>
+        <p class="pricing-compare-price">เริ่มต้นได้ในราคาที่เข้าถึงง่ายกว่าการเรียนคอร์สหรือจ้างโค้ชหลายเท่า</p>
+        <ul class="pricing-features">
+          <li>✅ Ebook PDF 100+ หน้า ดาวน์โหลดได้ทันที</li>
+          <li>✅ 6 Phase ระบบค้นหาตัวตนด้วย AI</li>
+          <li>✅ Prompt สำเร็จรูปครบทุก Phase</li>
+          <li>✅ รวม Prompt ทั้งหมดในส่วนเดียว</li>
+          <li>✅ เหมาะกับผู้เริ่มต้น แม้ยังไม่เคยใช้ AI มาก่อน</li>
+          <li>✅ ใช้ได้กับ ChatGPT, Claude, Gemini</li>
+          <li>✅ อ่านได้ตลอดชีวิต ไม่มีวันหมดอายุ</li>
+        </ul>
+        <div class="pricing-preview-hint">
+          <span>📄</span>
+          <div>
+            <strong>ยังลังเลอยู่?</strong>
+            <a href="ตัวอย่าง EBook สูตรโกงค้นหาตัวตน .pdf" target="_blank">ดูตัวอย่างเนื้อหาจริงฟรีก่อนตัดสินใจ →</a>
+          </div>
+        </div>
+        <button onclick="openModal()" class="btn-primary btn-large">
+          <span>ซื้อ Ebook เลย — 490 บาท</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <p class="pricing-note">💳 รับชำระผ่านพร้อมเพย์ / โอนเงิน / QR Code</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-label reveal">คำถามที่พบบ่อย</div>
+      <h2 class="section-title reveal">FAQ</h2>
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            <span>ดูตัวอย่างก่อนซื้อได้ไหม?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>ได้เลยครับ! มีไฟล์ตัวอย่างให้เปิดดูฟรี ก่อนตัดสินใจซื้อ ในนั้นมีบทนำ วิธีใช้ Prompt และ Mini Practice ให้ลองสำรวจตัวเองได้ทันทีเลย <a href="ตัวอย่าง EBook สูตรโกงค้นหาตัวตน .pdf" target="_blank" style="color:var(--cyan)">คลิกที่นี่เพื่อเปิดตัวอย่างฟรี →</a></p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            <span>คนที่ไม่เคยใช้ ChatGPT เลย ใช้เล่มนี้ได้ไหม?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>ได้ครับ เล่มนี้มี Phase 0 ที่จะสอนวิธีตั้งค่าและใช้ AI ตั้งแต่ศูนย์เลย ไม่ต้องมีพื้นฐานอะไรมาก่อน แค่มีสมาร์ทโฟนหรือคอมพิวเตอร์ก็พอ</p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            <span>ใช้กับ AI ตัวไหนได้บ้าง?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>ใช้ได้กับ ChatGPT, Claude และ Gemini ครับ ไม่จำเป็นต้องสมัคร Pro ใช้เวอร์ชันฟรีก็ใช้งาน Prompt ในเล่มได้ครบทุก Phase เลย แต่ถ้ามีเวอร์ชัน Pro ผลจะดียิ่งขึ้น</p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            <span>ต้องมีพื้นฐาน AI มาก่อนไหม?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>ไม่จำเป็นเลยครับ เล่มนี้มี Phase 0 ที่จะสอนวิธีตั้งค่าและใช้ AI ตั้งแต่เริ่มต้น ใช้ ChatGPT หรือ Claude ฟรีก็ได้</p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            <span>รับ Ebook ยังไง?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>หลังชำระเงินจะได้รับไฟล์ PDF ทาง Email หรือช่องทางที่ระบุไว้ สามารถดาวน์โหลดและเก็บไว้ได้ตลอดครับ</p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            <span>เหมาะกับคนอายุเท่าไหร่?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>ไม่จำกัดอายุครับ ตั้งแต่นักศึกษาจบใหม่ที่ยังไม่รู้จะเดินไปทางไหน ไปจนถึงคนทำงาน 10 ปีแล้วยังรู้สึกว่ายังไม่ใช่ ก็ใช้ได้ทั้งนั้น</p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            <span>เล่มนี้เป็นคำแนะนำทางจิตวิทยาหรือการแพทย์ไหม?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>ไม่ใช่ครับ เนื้อหาทั้งหมดมาจากประสบการณ์ส่วนตัวของผู้เขียนและ Prompt ที่ใช้ได้ผลกับตัวเอง ไม่ใช่คำแนะนำทางการแพทย์หรือจิตวิทยา ถ้ากำลังเผชิญกับปัญหาสุขภาพจิตควรปรึกษาผู้เชี่ยวชาญโดยตรงนะครับ</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section class="final-cta-section">
+    <div class="container">
+      <div class="final-cta-content reveal">
+        <h2>พร้อมเริ่มค้นหาตัวเองแล้วหรือยัง?</h2>
+        <p>ถ้าตอนนี้รู้สึกว่า "ยังไม่รู้จะเริ่มตรงไหน"<br />นั่นแหละคือจุดเริ่มต้นที่ตามหาครับ</p>
+        <div class="final-cta-buttons">
+          <button onclick="openModal()" class="btn-primary btn-large">
+            <span>ซื้อเลย — 490 บาท</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <a href="ตัวอย่าง EBook สูตรโกงค้นหาตัวตน .pdf" target="_blank" class="btn-ghost btn-large">
+            📖 ดูตัวอย่างฟรีก่อน
+          </a>
+        </div>
+        <p class="final-cta-note">อ่านตัวอย่างแล้วรู้สึกว่าใช่ — กลับมาซื้อเล่มเต็มได้เลย</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">
+        <span class="logo-accent">สูตรโกง</span> ค้นหาตัวตนด้วย AI
+      </div>
+      <p class="footer-desc">
+        เครื่องมือสำรวจและทำความเข้าใจตัวเอง ไม่ใช่คำแนะนำทางการแพทย์หรือจิตวิทยา<br />
+        เนื้อหามาจากประสบการณ์ส่วนตัวของผู้เขียน ผลลัพธ์ของแต่ละคนอาจแตกต่างกัน
+      </p>
+      <p class="footer-copy">© 2025 สูตรโกงค้นหาตัวตนด้วย AI · สงวนลิขสิทธิ์</p>
+    </div>
+  </footer>
+
+  <!-- ===== PURCHASE MODAL ===== -->
+  <div class="modal-overlay" id="modal-overlay" onclick="closeModal()">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="modal-header">
+        <div class="modal-badge">🎉 ยืนยันการสั่งซื้อ</div>
+        <h3>สูตรโกง ค้นหาตัวตน ด้วย AI</h3>
+        <div class="modal-price">490 <span>บาท</span></div>
+      </div>
+      <div class="modal-body">
+        <p class="modal-inst-title">📱 ชำระผ่านพร้อมเพย์ / โอนเงิน</p>
+        <div class="modal-payment-box">
+          <div class="modal-qr-placeholder">
+            <div class="qr-icon">QR</div>
+            <p>พร้อมเพย์<br /><strong>[ใส่หมายเลขพร้อมเพย์ของคุณ]</strong></p>
+          </div>
+          <div class="modal-bank-info">
+            <div class="bank-row">
+              <span class="bank-label">ธนาคาร</span>
+              <span class="bank-val">[ชื่อธนาคาร]</span>
+            </div>
+            <div class="bank-row">
+              <span class="bank-label">เลขบัญชี</span>
+              <span class="bank-val">[เลขบัญชี]</span>
+            </div>
+            <div class="bank-row">
+              <span class="bank-label">ชื่อบัญชี</span>
+              <span class="bank-val">[ชื่อเจ้าของบัญชี]</span>
+            </div>
+            <div class="bank-row">
+              <span class="bank-label">จำนวนเงิน</span>
+              <span class="bank-val highlight">490 บาท</span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-steps">
+          <p class="modal-steps-title">หลังโอนเงิน:</p>
+          <ol>
+            <li>📸 ถ่ายสลิปการโอน</li>
+            <li>📲 ส่งสลิปมาที่ [LINE / Email ของคุณ]</li>
+            <li>📩 รับไฟล์ Ebook ภายใน 24 ชั่วโมง</li>
+          </ol>
+        </div>
+        <div class="modal-contact">
+          <p>ติดต่อสอบถาม:</p>
+          <a href="https://line.me/ti/p/[YOUR_LINE_ID]" target="_blank" class="modal-line-btn">LINE: @[YOUR_LINE_ID]</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
