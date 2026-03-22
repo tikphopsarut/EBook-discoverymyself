@@ -11,6 +11,18 @@
 </head>
 <body>
 
+  <!-- ===== EARLY BIRD TOP BAR ===== -->
+  <div class="early-bird-topbar" id="earlyBirdBar">
+    <div class="eb-topbar-inner">
+      <span class="eb-fire">🔥</span>
+      <span class="eb-msg">
+        <strong>Early Bird ลด 100 บาท!</strong>
+        ราคาปกติ <s>490 บาท</s> → เหลือ <strong>390 บาท</strong>
+      </span>
+      <button onclick="openModal()" class="eb-topbar-btn">ซื้อตอนนี้ 390 ฿ →</button>
+    </div>
+  </div>
+
   <!-- ===== NAVBAR ===== -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
@@ -19,7 +31,7 @@
       </div>
       <div class="nav-actions">
         <a href="ตัวอย่าง EBook สูตรโกงค้นหาตัวตน .pdf" target="_blank" class="nav-preview">ดูตัวอย่างฟรี</a>
-        <button onclick="openModal()" class="nav-cta">ซื้อเลย 490 ฿</button>
+        <button onclick="openModal()" class="nav-cta">🐦 Early Bird <s style="opacity:.55;font-size:.85em">490</s> → 390 ฿</button>
       </div>
     </div>
   </nav>
@@ -45,7 +57,7 @@
         </ul>
         <div class="hero-actions reveal">
           <button onclick="openModal()" class="btn-primary btn-hero-primary">
-            <span>เริ่มค้นหาตัวเองวันนี้ — 490 บาท</span>
+            <span>🐦 Early Bird — <s style="opacity:.6;font-weight:400">490</s> → <strong>390 บาท</strong> ประหยัด 100฿</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </button>
           <a href="ตัวอย่าง EBook สูตรโกงค้นหาตัวตน .pdf" target="_blank" class="btn-ghost btn-hero-ghost">
@@ -70,8 +82,8 @@
           </div>
           <div class="stat-divider"></div>
           <div class="stat-item">
-            <span class="stat-num">490</span><span class="stat-suffix">฿</span>
-            <span class="stat-label">เท่านั้น</span>
+            <span class="stat-num" style="color:var(--cyan)">390</span><span class="stat-suffix">฿</span>
+            <span class="stat-label" style="color:#ff6b6b;font-size:.7rem">Early Bird <s style="color:#aaa">490</s></span>
           </div>
         </div>
       </div>
@@ -228,7 +240,7 @@
           <span>📄 เปิดดูตัวอย่างฟรีเลย</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
         </a>
-        <p class="preview-cta-note">อ่านตัวอย่างแล้วรู้สึกว่าใช่ — เล่มเต็มราคา 490 บาท</p>
+        <p class="preview-cta-note">อ่านตัวอย่างแล้วรู้สึกว่าใช่ — Early Bird ตอนนี้ <strong style="color:var(--cyan)">390 บาท</strong> (ปกติ <s>490</s>)</p>
       </div>
     </div>
   </section>
@@ -470,7 +482,7 @@
       </div>
       <div class="phase-gallery-cta reveal">
         <button onclick="openModal()" class="btn-primary">
-          <span>รับ Ebook ครบทั้ง 5 Phase — 490 บาท</span>
+          <span>🐦 Early Bird — รับ Ebook ครบทั้ง 5 Phase ราคา 390 บาท</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
       </div>
@@ -491,7 +503,7 @@
         <div class="compare-row">
           <div class="compare-col col-feature">ค่าใช้จ่าย</div>
           <div class="compare-col col-old bad">คอร์ส / โค้ช ราคาสูง</div>
-          <div class="compare-col col-new good">490 บาท</div>
+          <div class="compare-col col-new good"><strong>390 บาท</strong> <small style="opacity:.7">(Early Bird)</small></div>
         </div>
         <div class="compare-row">
           <div class="compare-col col-feature">เวลา</div>
@@ -575,7 +587,7 @@
         </div>
         <div class="testimonial-card reveal">
           <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"ลองผิดลองถูกมาหลายปี จนมาเจอเล่มนี้ มันไม่ได้บอกว่าคุณควรเป็นอะไร แต่มันช่วยให้คุณได้ยินเสียงของตัวเองชัดขึ้น ราคา 490 คุ้มมากครับ"</p>
+          <p class="testimonial-text">"ลองผิดลองถูกมาหลายปี จนมาเจอเล่มนี้ มันไม่ได้บอกว่าคุณควรเป็นอะไร แต่มันช่วยให้คุณได้ยินเสียงของตัวเองชัดขึ้น ราคา 390 Early Bird คุ้มมากครับ"</p>
           <div class="testimonial-author">
             <div class="author-avatar">K</div>
             <div>
@@ -604,17 +616,25 @@
     <div class="container">
       <div class="section-label reveal">ราคา</div>
       <h2 class="section-title reveal">เริ่มต้นค้นหาตัวเองวันนี้</h2>
-      <div class="pricing-card reveal">
-        <div class="pricing-badge">🔥 ราคาพิเศษ</div>
+      <div class="pricing-card reveal pricing-card--earlybird">
+        <div class="pricing-badge">🐦 Early Bird — จำกัดระยะเวลา</div>
         <div class="pricing-book-img">
           <img src="รูป/EBook สูตรโกงค้นหาตัวตน.png" alt="Ebook สูตรโกงค้นหาตัวตนด้วย AI" />
         </div>
         <h3 class="pricing-title">สูตรโกง ค้นหาตัวตน ด้วย AI</h3>
-        <div class="pricing-price">
-          <span class="price-amount">490</span>
+
+        <!-- Price Anchoring Zone -->
+        <div class="pricing-anchor-zone">
+          <div class="anchor-original">ราคาปกติ <s>490 บาท</s></div>
+          <div class="anchor-saving">คุณประหยัด 100 บาท!</div>
+        </div>
+        <div class="pricing-price pricing-price--new">
+          <span class="price-amount" style="color:var(--cyan)">390</span>
           <span class="price-currency">บาท</span>
         </div>
-        <p class="pricing-compare-price">เริ่มต้นได้ในราคาที่เข้าถึงง่ายกว่าการเรียนคอร์สหรือจ้างโค้ชหลายเท่า</p>
+        <p class="pricing-compare-price">
+          จ้างโค้ชชั่วโมงเดียวราคา <strong>5,000–15,000 บาท</strong> — เล่มนี้ทำสิ่งเดียวกันในราคา <strong style="color:var(--cyan)">390 บาท</strong> ใช้ได้ตลอดชีวิต
+        </p>
         <ul class="pricing-features">
           <li>✅ Ebook PDF 100+ หน้า ดาวน์โหลดได้ทันที</li>
           <li>✅ 6 Phase ระบบค้นหาตัวตนด้วย AI</li>
@@ -624,6 +644,12 @@
           <li>✅ ใช้ได้กับ ChatGPT, Claude, Gemini</li>
           <li>✅ อ่านได้ตลอดชีวิต ไม่มีวันหมดอายุ</li>
         </ul>
+
+        <!-- Scarcity/FOMO Strip -->
+        <div class="pricing-scarcity">
+          🔒 ราคานี้เป็น Early Bird เท่านั้น — เมื่อหมดโปรโมชั่น ราคากลับขึ้น 490 บาท ทันที
+        </div>
+
         <div class="pricing-preview-hint">
           <span>📄</span>
           <div>
@@ -631,11 +657,12 @@
             <a href="ตัวอย่าง EBook สูตรโกงค้นหาตัวตน .pdf" target="_blank">ดูตัวอย่างเนื้อหาจริงฟรีก่อนตัดสินใจ →</a>
           </div>
         </div>
-        <button onclick="openModal()" class="btn-primary btn-large">
-          <span>ซื้อ Ebook เลย — 490 บาท</span>
+        <button onclick="openModal()" class="btn-primary btn-large btn-pulse">
+          <span>🐦 ซื้อ Early Bird เลย — 390 บาท</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
         <p class="pricing-note">💳 รับชำระผ่านพร้อมเพย์ / โอนเงิน / QR Code</p>
+        <p class="pricing-note" style="color:#ff6b6b;margin-top:.25rem">⏳ ราคาปกติ 490 บาท — Early Bird นี้จำกัดระยะเวลา</p>
       </div>
     </div>
   </section>
@@ -720,15 +747,15 @@
         <h2>พร้อมเริ่มค้นหาตัวเองแล้วหรือยัง?</h2>
         <p>ถ้าตอนนี้รู้สึกว่า "ยังไม่รู้จะเริ่มตรงไหน"<br />นั่นแหละคือจุดเริ่มต้นที่ตามหาครับ</p>
         <div class="final-cta-buttons">
-          <button onclick="openModal()" class="btn-primary btn-large">
-            <span>ซื้อเลย — 490 บาท</span>
+          <button onclick="openModal()" class="btn-primary btn-large btn-pulse">
+            <span>🐦 Early Bird ซื้อเลย — 390 บาท <s style="opacity:.55;font-size:.85em;font-weight:400">490</s></span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </button>
           <a href="ตัวอย่าง EBook สูตรโกงค้นหาตัวตน .pdf" target="_blank" class="btn-ghost btn-large">
             📖 ดูตัวอย่างฟรีก่อน
           </a>
         </div>
-        <p class="final-cta-note">อ่านตัวอย่างแล้วรู้สึกว่าใช่ — กลับมาซื้อเล่มเต็มได้เลย</p>
+        <p class="final-cta-note">อ่านตัวอย่างแล้วรู้สึกว่าใช่ — Early Bird <strong>390 บาท</strong> จำกัดระยะเวลา อย่าพลาด!</p>
       </div>
     </div>
   </section>
@@ -752,9 +779,13 @@
     <div class="modal-box" onclick="event.stopPropagation()">
       <button class="modal-close" onclick="closeModal()">✕</button>
       <div class="modal-header">
-        <div class="modal-badge">🎉 ยืนยันการสั่งซื้อ</div>
+        <div class="modal-badge">🐦 Early Bird — ราคาพิเศษ!</div>
         <h3>สูตรโกง ค้นหาตัวตน ด้วย AI</h3>
-        <div class="modal-price">490 <span>บาท</span></div>
+        <div class="modal-price-wrap">
+          <div class="modal-price-original">ราคาปกติ <s>490 บาท</s></div>
+          <div class="modal-price">390 <span>บาท</span></div>
+          <div class="modal-price-saving">🎉 คุณประหยัด 100 บาท!</div>
+        </div>
       </div>
       <div class="modal-body">
         <p class="modal-inst-title">📱 ชำระผ่านพร้อมเพย์ / โอนเงิน</p>
@@ -778,7 +809,7 @@
             </div>
             <div class="bank-row">
               <span class="bank-label">จำนวนเงิน</span>
-              <span class="bank-val highlight">490 บาท</span>
+              <span class="bank-val highlight">390 บาท (Early Bird)</span>
             </div>
           </div>
         </div>
