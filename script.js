@@ -336,16 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // MODAL — global functions
 // ============================================
 function openModal() {
-  const overlay = document.getElementById('modal-overlay');
-  overlay.classList.add('open');
-  document.body.style.overflow = 'hidden';
-
-  // Trap focus inside modal
-  const modal = overlay.querySelector('.modal-box');
-  const focusable = modal.querySelectorAll('button, a, input');
-  if (focusable.length > 0) {
-    setTimeout(() => focusable[0].focus(), 100);
-  }
+  window.open('https://buy.stripe.com/6oU9AV2vwfSFbVpbdQaIM02', '_blank');
 }
 
 function closeModal() {
