@@ -56,15 +56,18 @@
           <li><span class="bullet-dot"></span>ใช้กับ ChatGPT ได้ทันที ไม่ต้องติดตั้งอะไรเพิ่ม</li>
         </ul>
         <div class="hero-actions reveal">
-          <button onclick="openModal()" class="btn-primary btn-hero-primary">
-            <span>🐦 Early Bird — <s style="opacity:.6;font-weight:400">490</s> → <strong>390 บาท</strong> ประหยัด 100฿</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </button>
+          <div style="display:flex;flex-direction:column;align-items:flex-start;gap:8px;">
+            <button onclick="openModal()" class="btn-primary btn-hero-primary btn-pulse">
+              <span>ซื้อเลย 390 บาท <s style="opacity:.55;font-weight:400;font-size:.85em">490</s></span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            <p class="cta-sub-note">✅ ชำระเงินแล้ว รับ Ebook ทันทีทางอีเมล</p>
+          </div>
           <a href="ตัวอย่าง EBook สูตรโกงค้นหาตัวตน .pdf" target="_blank" class="btn-ghost btn-hero-ghost">
             อ่านตัวอย่างฟรี 8 หน้า
           </a>
         </div>
-        <p class="hero-micro-trust reveal">เปิดดูตัวอย่างฟรีก่อนตัดสินใจ &nbsp;•&nbsp; ไม่ต้องลงทะเบียน</p>
+        <p class="hero-micro-trust reveal">ซื้อวันนี้ รับ Ebook ทันทีทางอีเมล &nbsp;•&nbsp; เปิดดูตัวอย่างฟรีก่อนได้เลย</p>
         <div class="hero-stats reveal">
           <div class="stat-item">
             <span class="stat-num">100</span><span class="stat-suffix">+</span>
@@ -170,6 +173,51 @@
     </div>
   </section>
 
+  <!-- ===== CTA AFTER WHO-FOR ===== -->
+  <section style="padding: 0 0 60px; background: var(--bg-dark);">
+    <div class="container">
+      <div class="cta-block reveal">
+        <button onclick="openModal()" class="btn-primary btn-large btn-pulse">
+          <span>ซื้อเลย 390 บาท — เริ่มค้นหาตัวเองวันนี้</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <p class="cta-sub-note">✅ ชำระเงินแล้ว รับ Ebook ทันทีทางอีเมล</p>
+        <a href="ตัวอย่าง EBook สูตรโกงค้นหาตัวตน .pdf" target="_blank" class="btn-ghost" style="font-size:.9rem;padding:10px 22px;">อ่านตัวอย่างฟรีก่อน →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NOT FOR SECTION ===== -->
+  <section class="not-for-section" id="not-for">
+    <div class="container" style="text-align:center;">
+      <div class="section-label reveal">ตรงไปตรงมา</div>
+      <h2 class="section-title reveal">เล่มนี้<span style="color:#ff6b6b">ไม่เหมาะ</span>กับใคร?</h2>
+      <p class="section-desc reveal">ผมอยากให้คุณรู้ก่อนว่าเล่มนี้อาจไม่ใช่สำหรับทุกคน<br />เพื่อที่คุณจะได้ตัดสินใจอย่างมีข้อมูล</p>
+      <div class="not-for-grid">
+        <div class="not-for-card reveal">
+          <div class="not-for-x">✕</div>
+          <p><strong>คนที่ต้องการคำตอบทันที</strong><br />เล่มนี้ไม่ใช่ "สูตรสำเร็จ" ที่ตอบทุกอย่างให้ครับ แต่เป็นเครื่องมือช่วยให้คุณค้นพบด้วยตัวเอง</p>
+        </div>
+        <div class="not-for-card reveal">
+          <div class="not-for-x">✕</div>
+          <p><strong>คนที่ไม่พร้อมจะตอบคำถามตัวเอง</strong><br />กระบวนการนี้ต้องการความซื่อสัตย์กับตัวเอง ถ้าไม่พร้อมตอบตามความจริง ผลลัพธ์จะน้อยกว่าที่ควร</p>
+        </div>
+        <div class="not-for-card reveal">
+          <div class="not-for-x">✕</div>
+          <p><strong>คนที่มองหา "คอร์สสอนรวย" หรือ "สูตรทำเงิน"</strong><br />เล่มนี้ไม่ได้สอนวิธีหาเงิน แต่ช่วยให้คุณรู้ว่าตัวเองอยากทำอะไรจริงๆ</p>
+        </div>
+        <div class="not-for-card reveal">
+          <div class="not-for-x">✕</div>
+          <p><strong>คนที่รู้จักตัวเองดีและพอใจกับชีวิตอยู่แล้ว</strong><br />ถ้าคุณแน่ใจในทิศทางชีวิตแล้ว เล่มนี้อาจไม่ได้เพิ่มอะไรมากนัก</p>
+        </div>
+      </div>
+      <p class="not-for-note reveal">
+        ถ้าคุณไม่อยู่ในกลุ่มด้านบน และยังรู้สึกว่า <strong>"ยังไม่รู้จักตัวเองพอ"</strong><br />
+        นั่นแหละคือคนที่เล่มนี้เขียนมาเพื่อครับ
+      </p>
+    </div>
+  </section>
+
   <!-- ===== PREVIEW SECTION ===== -->
   <section class="preview-section" id="preview">
     <div class="container">
@@ -236,11 +284,21 @@
         </div>
       </div>
       <div class="preview-cta reveal">
-        <a href="ตัวอย่าง EBook สูตรโกงค้นหาตัวตน .pdf" target="_blank" class="btn-primary btn-large">
+        <a href="ตัวอย่าง EBook สูตรโกงค้นหาตัวตน .pdf" target="_blank" class="btn-ghost btn-large">
           <span>📄 เปิดดูตัวอย่างฟรีเลย</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
         </a>
         <p class="preview-cta-note">อ่านตัวอย่างแล้วรู้สึกว่าใช่ — Early Bird ตอนนี้ <strong style="color:var(--cyan)">390 บาท</strong> (ปกติ <s>490</s>)</p>
+      </div>
+
+      <!-- CTA หลัง preview -->
+      <div class="cta-block reveal" style="margin-top:40px;">
+        <p style="color:var(--white-60);font-size:.95rem;margin-bottom:4px;">อ่านตัวอย่างแล้วรู้สึกว่าใช่? ซื้อเลยได้เลยครับ</p>
+        <button onclick="openModal()" class="btn-primary btn-large btn-pulse">
+          <span>ซื้อเลย 390 บาท</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <p class="cta-sub-note">✅ ซื้อวันนี้ รับ Ebook ทันทีทางอีเมล</p>
       </div>
     </div>
   </section>
@@ -480,11 +538,12 @@
         </div>
 
       </div>
-      <div class="phase-gallery-cta reveal">
-        <button onclick="openModal()" class="btn-primary">
-          <span>🐦 Early Bird — รับ Ebook ครบทั้ง 5 Phase ราคา 390 บาท</span>
+      <div class="phase-gallery-cta reveal" style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+        <button onclick="openModal()" class="btn-primary btn-large btn-pulse">
+          <span>ซื้อเลย 390 บาท — รับ Ebook ครบทั้ง 5 Phase</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
+        <p class="cta-sub-note">✅ ซื้อวันนี้ รับ Ebook ทันทีทางอีเมล</p>
       </div>
     </div>
   </section>
@@ -658,11 +717,27 @@
           </div>
         </div>
         <button onclick="openModal()" class="btn-primary btn-large btn-pulse">
-          <span>🐦 ซื้อ Early Bird เลย — 390 บาท</span>
+          <span>ซื้อเลย 390 บาท</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
+        <p class="cta-sub-note" style="margin-top:12px;">✅ ชำระเงินแล้ว รับ Ebook ทันทีทางอีเมล</p>
         <p class="pricing-note">💳 รับชำระผ่านพร้อมเพย์ / โอนเงิน / QR Code</p>
         <p class="pricing-note" style="color:#ff6b6b;margin-top:.25rem">⏳ ราคาปกติ 490 บาท — Early Bird นี้จำกัดระยะเวลา</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA BEFORE FAQ ===== -->
+  <section style="padding: 60px 0; background: rgba(0,212,255,0.02); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+    <div class="container">
+      <div class="cta-block reveal">
+        <p style="color:var(--white-60);font-size:1rem;margin-bottom:8px;">ยังลังเลอยู่? ลองอ่านตัวอย่างฟรีก่อน หรือซื้อเลยได้เลยครับ</p>
+        <button onclick="openModal()" class="btn-primary btn-large btn-pulse">
+          <span>ซื้อเลย 390 บาท</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <p class="cta-sub-note">✅ ชำระเงินแล้ว รับ Ebook ทันทีทางอีเมล</p>
+        <a href="ตัวอย่าง EBook สูตรโกงค้นหาตัวตน .pdf" target="_blank" class="btn-ghost" style="font-size:.9rem;padding:10px 22px;">📄 อ่านตัวอย่างฟรีก่อนตัดสินใจ</a>
       </div>
     </div>
   </section>
@@ -740,6 +815,59 @@
     </div>
   </section>
 
+  <!-- ===== VALUE SUMMARY SECTION ===== -->
+  <section class="value-summary-section" id="value">
+    <div class="container" style="text-align:center;">
+      <div class="section-label reveal">สรุปให้ครบก่อนตัดสินใจ</div>
+      <h2 class="section-title reveal">คุณจะได้รับ<span class="text-cyan">อะไรบ้าง?</span></h2>
+      <p class="section-desc reveal">ทุกอย่างที่อยู่ในเล่มนี้ ในราคาเดียว</p>
+      <div class="value-box reveal">
+        <ul class="value-list">
+          <li>
+            <span class="v-check">✓</span>
+            <div><strong>Ebook PDF 100+ หน้า</strong> — เนื้อหาจากประสบการณ์จริง ดาวน์โหลดและเก็บไว้ได้ตลอดชีวิต</div>
+          </li>
+          <li>
+            <span class="v-check">✓</span>
+            <div><strong>6 Phase ระบบค้นหาตัวตน</strong> — จากอดีต → ปัจจุบัน → อนาคต → แผนชีวิต</div>
+          </li>
+          <li>
+            <span class="v-check">✓</span>
+            <div><strong>Prompt สำเร็จรูปทุก Phase</strong> — copy-paste ใช้ได้ทันที ไม่ต้องคิดเอง</div>
+          </li>
+          <li>
+            <span class="v-check">✓</span>
+            <div><strong>ใช้ได้กับ AI ทุกตัวฟรี</strong> — ChatGPT, Claude, Gemini ไม่ต้องจ่ายเพิ่ม</div>
+          </li>
+          <li>
+            <span class="v-check">✓</span>
+            <div><strong>เหมาะกับผู้เริ่มต้นสมบูรณ์</strong> — Phase 0 สอนใช้ AI ตั้งแต่ศูนย์</div>
+          </li>
+          <li>
+            <span class="v-check">✓</span>
+            <div><strong>เครื่องมือโค้ชตัวเองตลอดชีวิต</strong> — ใช้ซ้ำได้ทุกช่วงชีวิต</div>
+          </li>
+        </ul>
+
+        <div class="value-price-wrap">
+          <div class="value-price-original">ราคาปกติ <s>490 บาท</s></div>
+          <div class="value-price-new">
+            <span class="vp-amount">390</span>
+            <span class="vp-currency">บาท</span>
+          </div>
+          <div class="value-price-saving">🎉 Early Bird — ประหยัด 100 บาท!</div>
+        </div>
+
+        <button onclick="openModal()" class="btn-primary btn-large btn-pulse" style="width:100%;max-width:420px;justify-content:center;">
+          <span>ซื้อเลย 390 บาท</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <p class="value-delivery-note">✅ ชำระเงินแล้ว รับ Ebook ทันทีทางอีเมล</p>
+        <p style="font-size:.82rem;color:var(--white-60);margin-top:12px;">💳 รับชำระผ่านพร้อมเพย์ / โอนเงิน / QR Code</p>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== FINAL CTA ===== -->
   <section class="final-cta-section">
     <div class="container">
@@ -747,15 +875,18 @@
         <h2>พร้อมเริ่มค้นหาตัวเองแล้วหรือยัง?</h2>
         <p>ถ้าตอนนี้รู้สึกว่า "ยังไม่รู้จะเริ่มตรงไหน"<br />นั่นแหละคือจุดเริ่มต้นที่ตามหาครับ</p>
         <div class="final-cta-buttons">
-          <button onclick="openModal()" class="btn-primary btn-large btn-pulse">
-            <span>🐦 Early Bird ซื้อเลย — 390 บาท <s style="opacity:.55;font-size:.85em;font-weight:400">490</s></span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </button>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+            <button onclick="openModal()" class="btn-primary btn-large btn-pulse">
+              <span>ซื้อเลย 390 บาท</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            <p class="cta-sub-note">✅ ชำระเงินแล้ว รับ Ebook ทันทีทางอีเมล</p>
+          </div>
           <a href="ตัวอย่าง EBook สูตรโกงค้นหาตัวตน .pdf" target="_blank" class="btn-ghost btn-large">
             📖 ดูตัวอย่างฟรีก่อน
           </a>
         </div>
-        <p class="final-cta-note">อ่านตัวอย่างแล้วรู้สึกว่าใช่ — Early Bird <strong>390 บาท</strong> จำกัดระยะเวลา อย่าพลาด!</p>
+        <p class="final-cta-note">ซื้อวันนี้ รับ Ebook ทันทีทางอีเมล — Early Bird <strong>390 บาท</strong> จำกัดระยะเวลา อย่าพลาด!</p>
       </div>
     </div>
   </section>
@@ -818,8 +949,11 @@
           <ol>
             <li>📸 ถ่ายสลิปการโอน</li>
             <li>📲 ส่งสลิปมาที่ [LINE / Email ของคุณ]</li>
-            <li>📩 รับไฟล์ Ebook ภายใน 24 ชั่วโมง</li>
+            <li>📩 <strong>รับ Ebook ทันทีทางอีเมล</strong> ภายหลังยืนยันการชำระเงิน</li>
           </ol>
+        </div>
+        <div style="background:rgba(93,219,143,.08);border:1px solid rgba(93,219,143,.25);border-radius:10px;padding:12px 16px;margin-top:12px;text-align:center;font-size:.88rem;color:#5ddb8f;font-weight:600;">
+          ✅ ซื้อวันนี้ รับ Ebook ทันทีทางอีเมล
         </div>
         <div class="modal-contact">
           <p>ติดต่อสอบถาม:</p>
